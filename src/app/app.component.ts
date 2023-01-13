@@ -10,15 +10,14 @@ export class AppComponent {
   randomText = lorem.sentence();
   userText: string = '';
   onInput(value: string){
-    console.log(value);
-   
+    this.userText = value;
+  }
 
-    if(value.length === 0){
-      this.userText = value;
+  compare(randomLetter: string, userLetter: string){
+    if(!userLetter) {
+      return 'pending';
     }
-    else {
-      this.userText + value;
-    }
-    return this.userText;
+
+    return randomLetter === userLetter ? 'correct' : 'incorrect';
   }
 }
