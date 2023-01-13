@@ -4,12 +4,12 @@
       <h1 class="title has-text-centered">Typing Challenge</h1>
 
       <p class="has-text-centered">
-        {{ randomSentence }}
+        {{ randomText }}
       </p>
       <div class="field">
-        <input class="input" />
+        <input class="input" (input)="onInput($any($event.target).value)" />
       </div>
-      <div class="box has-text-centered">
+      <div class="box has-text-centered" *ngIf="randomText === userText">
         <h1>Success!</h1>
       </div>
     </div>

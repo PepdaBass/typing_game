@@ -7,5 +7,18 @@ import { lorem } from 'faker';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  randomSentence = lorem.sentence();
+  randomText = lorem.sentence();
+  userText: string = '';
+  onInput(value: string){
+    console.log(value);
+   
+
+    if(value.length === 0){
+      this.userText = value;
+    }
+    else {
+      this.userText + value;
+    }
+    return this.userText;
+  }
 }
